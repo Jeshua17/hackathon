@@ -1,0 +1,341 @@
+/* ==========================
+   RESET Y VARIABLES
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --check-blue: #293782;
+    --check-blue-card: #4a6fa5;
+    --check-blue-strong: #3a5f8f;
+    --check-black: #282828;
+    --check-white: #FBFBFB;
+    --check-gray-bg: #d0d0cc;
+    --check-gray-border: #b8b8b4;
+    --font-title: 'Montserrat', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+    --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--check-gray-bg);
+    color: var(--check-black);
+    padding: 16px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================
+   NAVBAR NEGRA (#282828)
+========================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 12px 24px;
+    background: var(--check-black);
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.20);
+    min-height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    max-height: 70px;
+}
+
+.logo img {
+    height: 55px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav-right i {
+    font-size: 1.2rem;
+    color: var(--check-white);
+    opacity: 0.6;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.nav-right i:hover {
+    opacity: 1;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.08);
+    border-radius: 40px;
+    padding: 6px 16px;
+    gap: 8px;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.search-box:hover {
+    background: rgba(255,255,255,0.14);
+}
+
+.search-box i {
+    font-size: 0.9rem;
+    opacity: 0.5;
+    color: var(--check-white);
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--check-white);
+    font-size: 0.85rem;
+    padding: 6px 0;
+    width: 140px;
+    font-family: var(--font-body);
+}
+
+.search-box input::placeholder {
+    color: rgba(255,255,255,0.4);
+    font-style: italic;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--check-blue);
+    color: var(--check-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.user-menu span {
+    color: var(--check-white);
+    font-weight: 600;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.menu-hamburger {
+    font-size: 1.3rem;
+    color: var(--check-white);
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.menu-hamburger:hover {
+    opacity: 1;
+}
+
+/* ==========================
+   BOTÓN DE CERRAR SESIÓN
+========================== */
+.btn-logout {
+    background: transparent;
+    color: var(--check-white);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-title);
+}
+
+.btn-logout:hover {
+    background: var(--check-white);
+    color: var(--check-black);
+}
+
+/* ==========================
+   CONTENEDORES AZUL FUERTE
+========================== */
+.container-card {
+    background: var(--check-blue-card);
+    border: 1px solid var(--check-gray-border);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    color: var(--check-white);
+}
+
+.container-card h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--check-white);
+    font-family: var(--font-title);
+}
+
+.container-card .sub {
+    font-weight: 400;
+    font-style: italic;
+    color: var(--check-white);
+    font-size: 0.95rem;
+    margin-top: 4px;
+}
+
+/* ==========================
+   FORMULARIOS (login / registro)
+========================== */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--check-white);
+    margin-bottom: 6px;
+    font-family: var(--font-title);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    font-size: 0.95rem;
+    background: rgba(255,255,255,0.1);
+    color: var(--check-white);
+    font-family: var(--font-body);
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--check-white);
+    background: rgba(255,255,255,0.15);
+}
+
+.form-group input::placeholder {
+    color: rgba(255,255,255,0.4);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background: var(--check-white);
+    color: var(--check-blue);
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-title);
+}
+
+.btn-submit:hover {
+    background: var(--check-black);
+    color: var(--check-white);
+    transform: scale(1.02);
+}
+
+/* ==========================
+   TAGS / FILTROS
+========================== */
+.tag {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 40px;
+    border: 1.5px solid var(--check-gray-border);
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--check-black);
+    background: var(--check-white);
+    font-family: var(--font-title);
+}
+
+.tag:hover {
+    border-color: var(--check-blue);
+    background: var(--check-blue-card);
+    color: var(--check-white);
+}
+
+.tag.active {
+    background: var(--check-blue);
+    color: var(--check-white);
+    border-color: var(--check-blue);
+}
+
+/* ==========================
+   FOOTER
+========================== */
+footer {
+    margin-top: auto;
+    padding: 20px;
+    text-align: center;
+    color: var(--check-black);
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 700px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 12px 18px;
+    }
+
+    .search-box input {
+        width: 100px;
+    }
+
+    .nav-right {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .search-box input {
+        width: 80px;
+        font-size: 0.75rem;
+    }
+
+    .logo img {
+        height: 35px;
+    }
+
+    .user-menu span {
+        display: none;
+    }
+
+    .container-card {
+        padding: 20px;
+    }
+}

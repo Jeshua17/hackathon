@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHECK - Iniciar Sesión</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilos específicos para login */
+        .login-wrapper {
+            max-width: 420px;
+            margin: 40px auto;
+            width: 100%;
+        }
+
+        .login-wrapper .container-card {
+            padding: 32px 28px;
+        }
+
+        .login-wrapper h2 {
+            text-align: center;
+            margin-bottom: 4px;
+        }
+
+        .login-wrapper .sub {
+            text-align: center;
+            margin-bottom: 24px;
+            opacity: 0.7;
+        }
+
+        .login-links {
+            text-align: center;
+            margin-top: 16px;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.85rem;
+        }
+
+        .login-links a {
+            color: var(--check-white);
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .login-links a:hover {
+            opacity: 0.7;
+        }
+
+        .error-message {
+            background: rgba(255, 0, 0, 0.15);
+            border: 1px solid rgba(255, 0, 0, 0.2);
+            color: #ffcccc;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- ==========================
+    FORMULARIO DE LOGIN
+    ========================== -->
+    <div class="login-wrapper">
+        <div class="container-card">
+            <h2>Iniciar Sesión</h2>
+            <p class="sub">Accede a tu cuenta CHECK</p>
+
+            <div id="error-message" class="error-message">
+                ❌ Usuario o contraseña incorrectos.
+            </div>
+
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Usuario o Correo</label>
+                    <input type="text" id="username" placeholder="Ingresa tu usuario" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="btn-submit">Ingresar</button>
+            </form>
+
+            <div class="login-links">
+                ¿No tienes cuenta? <a href="registro.html">Regístrate</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================
+    FOOTER
+    ========================== -->
+    <footer>
+        <p>&copy; 2026 CHECK · Nicaragua</p>
+    </footer>
+
+    <!-- ==========================
+    SCRIPTS
+    ========================== -->
+    <script src="js/login.js"></script>
+
+</body>
+</html>
