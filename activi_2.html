@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHECK - Todas las Actividades</title>
+  <link rel="stylesheet" href="css/activi_2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="top-bar">
+    <div class="logo">
+      <img src="img/icon_check.png" alt="Logo CHECK" class="logo-img">
+      CHECK
+    </div>
+  
+    <a href="principal.html" class="btn-volver">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      VOLVER AL INICIO
+    </a>
+  </header>
+
+  <section class="hero-banner">
+    <h1>TODAS LAS <span class="highlight">ACTIVIDADES</span></h1>
+  </section>
+
+  <nav class="filter-bar">
+    <button class="filter-btn active" data-category="todos">TODOS</button>
+    <button class="filter-btn" data-category="deporte">DEPORTE</button>
+    <button class="filter-btn" data-category="naturaleza">NATURALEZA</button>
+    <button class="filter-btn" data-category="urbano">URBANO</button>
+    <button class="filter-btn" data-category="futbol">FÚTBOL</button>
+    <button class="filter-btn" data-category="ciclismo">CICLISMO</button>
+    <button class="filter-btn" data-category="voleibol">VÓLEIBOL</button>
+    <button class="filter-btn" data-category="social">SOCIAL</button>
+  </nav>
+
+  <main class="grid-container" id="activities-grid">
+
+    <article class="card" data-category="deporte">
+      <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=800&auto=format&fit=crop" class="card-bg" alt="Baloncesto">
+      <div class="card-overlay">
+        <div class="badge-trending">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 23c6.075 0 11-4.925 11-11 0-6.075-4.925-11-11-11S1 5.925 1 12c0 6.075 4.925 11 11 11zm0-18a7 7 0 110 14 7 7 0 010-14z"/></svg>
+          TRENDING
+        </div>
+        <div class="card-body">
+          <span class="category-pill">DEPORTE</span>
+          <h3 class="card-title">TORNEO DE BALONCESTO 3X3</h3>
+          <div class="card-meta">
+            <span>
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              SAB 2 AGO
+            </span>
+            <span>
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              CANCHA 23 DE JULIO
+            </span>
+          </div>
+          <div class="card-footer">
+            <span class="spots-count">✓ 12 cupos disponibles</span>
+             <a href="card_1.html" class="btn-inscribete">INSCRÍBETE</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-category="ciclismo">
+      <img src="https://plus.unsplash.com/premium_photo-1684313874026-b26d35ae07e6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2ljbGlzbW8lMjB1cmJhbm98ZW58MHx8MHx8fDA%3D" class="card-bg" alt="Ciclismo">
+      <div class="card-overlay">
+        <div></div>
+        <div class="card-body">
+          <span class="category-pill">CICLISMO</span>
+          <h3 class="card-title">RUTA SENCILLA EN LEON</h3>
+          <div class="card-meta">
+            <span>
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              DOM 3 AGO
+            </span>
+            <span>
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Punto de encuentro: Parque Central
+            </span>
+          </div>
+          <div class="card-footer">
+            <span class="spots-count">✓ 10 cupos disponibles</span>
+            <a href="card_2.html" class="btn-inscribete">INSCRÍBETE</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-category="urbano">
+      <img src="https://images.unsplash.com/photo-1520045892732-304bc3ac5d8e?q=80&w=800&auto=format&fit=crop" class="card-bg" alt="Skateboarding">
+      <div class="card-overlay">
+        <div class="badge-trending">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 23c6.075 0 11-4.925 11-11 0-6.075-4.925-11-11-11S1 5.925 1 12c0 6.075 4.925 11 11 11zm0-18a7 7 0 110 14 7 7 0 010-14z"/></svg>
+          TRENDING
+        </div>
+        <div class="card-body">
+          <span class="category-pill">URBANO</span>
+          <h3 class="card-title">SKATEBOARD URBANO</h3>
+          <div class="card-meta">
+            <span>
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              VIE 1 AGO
+            </span>
+            <span>
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Skatepark-Puente Rio Chiquito
+            </span>
+          </div>
+          <div class="card-footer">
+            <span class="spots-count">✓ 10 cupos disponibles</span>
+             <a href="card_3.html" class="btn-inscribete">INSCRÍBETE</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-category="futbol">
+      <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=800&auto=format&fit=crop" class="card-bg" alt="Fútbol Sala">
+      <div class="card-overlay">
+        <div class="badge-trending">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 23c6.075 0 11-4.925 11-11 0-6.075-4.925-11-11-11S1 5.925 1 12c0 6.075 4.925 11 11 11zm0-18a7 7 0 110 14 7 7 0 010-14z"/></svg>
+          TRENDING
+        </div>
+        <div class="card-body">
+          <span class="category-pill">FÚTBOL</span>
+          <h3 class="card-title">RELÁMPAGO DE FÚTBOL SALA 5V5</h3>
+          <div class="card-meta">
+            <span>
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              VIE 7 AGO
+            </span>
+            <span>
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Paseo Real
+            </span>
+          </div>
+          <div class="card-footer">
+            <span class="spots-count">✓ 10 cupos disponibles</span>
+            <a href="card_4.html" class="btn-inscribete">INSCRÍBETE</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-category="voleibol">
+      <img src="https://images.unsplash.com/photo-1666901356149-93f2eb3ba5a2?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dm9sZWlib2x8ZW58MHx8MHx8fDA%3D" class="card-bg" alt="Voleibol">
+      <div class="card-overlay">
+        <div></div>
+        <div class="card-body">
+          <span class="category-pill">VOLEIBOL</span>
+          <h3 class="card-title">PARTIDO AMISTOSO</h3>
+          <div class="card-meta">
+            <span>
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              JUE 6 AGO
+            </span>
+            <span>
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Cancha Modesto Armijo
+            </span>
+          </div>
+          <div class="card-footer">
+            <span class="spots-count">✓ 12 cupos disponibles</span>
+            <a href="card_5.html" class="btn-inscribete">INSCRÍBETE</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-category="social">
+      <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop" class="card-bg" alt="Encuentro Social">
+      <div class="card-overlay">
+        <div></div>
+        <div class="card-body">
+          <span class="category-pill">SOCIAL</span>
+          <h3 class="card-title">CONVIVENCIA JUVENIL</h3>
+          <div class="card-meta">
+            <span>
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              SAB 8 AGO
+            </span>
+            <span>
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Campo La Esperanza
+            </span>
+          </div>
+          <div class="card-footer">
+            <span class="spots-count">✓ 25 cupos disponibles</span>
+              <a href="card_6.html" class="btn-inscribete">INSCRÍBETE</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-category="voleibol">
+      <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=800&auto=format&fit=crop" class="card-bg" alt="Vóleibol">
+      <div class="card-overlay">
+        <div class="badge-trending">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 23c6.075 0 11-4.925 11-11 0-6.075-4.925-11-11-11S1 5.925 1 12c0 6.075 4.925 11 11 11zm0-18a7 7 0 110 14 7 7 0 010-14z"/></svg>
+          TRENDING
+        </div>
+        <div class="card-body">
+          <span class="category-pill">VÓLEIBOL</span>
+          <h3 class="card-title">TORNEO MIXTO DE VÓLEIBOL</h3>
+          <div class="card-meta">
+            <span>
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              DOM 9 AGO
+            </span>
+            <span>
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Parque Infaltil Fundeci
+            </span>
+          </div>
+          <div class="card-footer">
+            <span class="spots-count">✓ 8 cupos disponibles</span>
+            <a href="card_7.html" class="btn-inscribete">INSCRÍBETE</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-category="futbol">
+      <img src="https://images.unsplash.com/photo-1570498839593-e565b39455fc?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZnV0Ym9sJTIwY2FtcG98ZW58MHx8MHx8fDA%3D" class="card-bg" alt="Fútbol Campo">
+      <div class="card-overlay">
+        <div></div>
+        <div class="card-body">
+          <span class="category-pill">FÚTBOL</span>
+          <h3 class="card-title">COPA COMUNITARIA FÚTBOL </h3>
+          <div class="card-meta">
+            <span>
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              SAB 15 AGO
+            </span>
+            <span>
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Colegio Calasanz
+            </span>
+          </div>
+          <div class="card-footer">
+            <span class="spots-count">✓ 18 cupos disponibles</span>
+            <a href="card_8.html" class="btn-inscribete">INSCRÍBETE</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-category="deporte">
+      <img src="https://images.unsplash.com/photo-1562077772-3bd90403f7f0?q=80&w=800&auto=format&fit=crop" class="card-bg" alt="Béisbol">
+      <div class="card-overlay">
+        <div></div>
+        <div class="card-body">
+          <span class="category-pill">DEPORTE</span>
+          <h3 class="card-title">JORNADA DE BÉISBOL </h3>
+          <div class="card-meta">
+            <span>
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              DOM 16 AGO
+            </span>
+            <span>
+              <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Campo de Béisbol Campo Victoria
+            </span>
+          </div>
+          <div class="card-footer">
+            <span class="spots-count">✓ 14 cupos disponibles</span>
+            <a href="card_9.html" class="btn-inscribete">INSCRÍBETE</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <script src="js/activi_2.js"></script>
+</body>
+</html>

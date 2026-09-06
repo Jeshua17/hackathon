@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHECK - Panel de Administración</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <img src="img/icon_check.png" alt="CHECK" class="logo-img">
+      <span class="logo-text">CHECK</span>
+    </div>
+    <div class="admin-badge">
+      <span id="admin-name">ADMINISTRADOR</span>
+      <button id="btn-volver" class="btn-secondary" onclick="window.location.href='principal.html'">
+            Volver al Inicio
+        </button>
+    </div>
+  </header>
+
+  <main class="admin-container">
+    <section class="panel-header">
+      <h1>Panel de Control de Participantes</h1>
+      <p>Gestión y moderación en tiempo real de inscripciones a actividades.</p>
+    </section>
+
+    <div class="table-card">
+  <div class="table-wrapper">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Participante</th>
+          <th>Correo</th>
+          <th>Teléfono</th>
+          <th>Actividad</th>
+          <th>Fecha Inscripción</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-inscripciones-body">
+        <tr>
+          <td colspan="7" class="loading-cell">Cargando registros...</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </main>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

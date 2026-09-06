@@ -1,125 +1,173 @@
-/**
- * ==========================
- * CHECK - INICIO DE SESIÓN
- * ==========================
- * Maneja:
- * - Validación de campos
- * - Autenticación (localStorage / simulación)
- * - Redirección a la página principal
- * - Mensajes de error
- */
+document.addEventListener('DOMContentLoaded', () => {
+  // Elementos principales
+  const tabLogin = document.getElementById('tab-login');
+  const tabRegister = document.getElementById('tab-register');
+  const formLogin = document.getElementById('form-login');
+  const formRegister = document.querySelector('form#form-register');
+  const closeBtn = document.getElementById('close-modal-btn');
 
-document.addEventListener('DOMContentLoaded', function() {
+  /* ==========================================
+     1. CAMBIO DE PESTAÑAS (LOGIN / REGISTRO)
+     ========================================== */
+  function showLogin(e) {
+    if (e) e.preventDefault();
+    if (tabLogin) tabLogin.classList.add('active');
+    if (tabRegister) tabRegister.classList.remove('active');
 
-    // ============================================
-    // 1. ELEMENTOS DEL DOM
-    // ============================================
-    const loginForm = document.getElementById('login-form');
-    const usernameInput = document.getElementById('username');
-    const passwordInput = document.getElementById('password');
-    const errorMessage = document.getElementById('error-message');
+    if (formLogin) formLogin.classList.add('active');
+    if (formRegister) formRegister.classList.remove('active');
+  }
 
-    // ============================================
-    // 2. SI EL USUARIO YA ESTÁ LOGUEADO, REDIRIGIR
-    // ============================================
-    const usuarioLogueado = localStorage.getItem('usuarioLogueado');
-    if (usuarioLogueado) {
-        window.location.href = 'index.html';
-    }
+  function showRegister(e) {
+    if (e) e.preventDefault();
+    if (tabRegister) tabRegister.classList.add('active');
+    if (tabLogin) tabLogin.classList.remove('active');
 
-    // ============================================
-    // 3. MANEJAR EL ENVÍO DEL FORMULARIO
-    // ============================================
-    loginForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+    if (formRegister) formRegister.classList.add('active');
+    if (formLogin) formLogin.classList.remove('active');
+  }
 
-        // Obtener valores
-        const username = usernameInput.value.trim();
-        const password = passwordInput.value.trim();
+  if (tabLogin) tabLogin.addEventListener('click', showLogin);
+  if (tabRegister) tabRegister.addEventListener('click', showRegister);
 
-        // Limpiar mensaje de error anterior
-        errorMessage.classList.remove('show');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      window.location.href = 'principal.html';
+    });
+  }
 
-        // ============================================
-        // 4. VALIDACIÓN DE CAMPOS
-        // ============================================
-        if (!username || !password) {
-            mostrarError('❌ Por favor, completa todos los campos.');
-            return;
-        }
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('action') === 'register') {
+    showRegister();
+  } else {
+    showLogin();
+  }
 
-        // ============================================
-        // 5. SIMULACIÓN DE AUTENTICACIÓN
-        // ============================================
-        // Aquí iría la llamada a tu backend real (fetch a /login)
-        // Por ahora, simulamos con localStorage
+  /* ==========================================
+     2. MOSTRAR / OCULTAR CONTRASEÑA
+     ========================================== */
+  const togglePasswordBtns = document.querySelectorAll('.toggle-password');
+  togglePasswordBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const input = btn.parentElement.querySelector('input');
+      if (input) {
+        input.type = input.type === 'password' ? 'text' : 'password';
+      }
+    });
+  });
 
-        const usuarios = JSON.parse(localStorage.getItem('usuariosDB')) || [];
+  /* ==========================================
+     3. PROCESAR INICIO DE SESIÓN
+     ========================================== */
+  if (formLogin) {
+    formLogin.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-        // Buscar usuario por username o email
-        const usuarioEncontrado = usuarios.find(user => 
-            (user.username === username || user.email === username) && 
-            user.password === password
-        );
+      // Captura directa de los campos del login
+      const inputCorreo = formLogin.querySelector('input[type="email"]');
+      const inputPassword = formLogin.querySelector('input[type="password"]') || formLogin.querySelector('.input-password-wrapper input');
 
-        if (usuarioEncontrado) {
-            // Guardar usuario en localStorage (sesión activa)
-            localStorage.setItem('usuarioLogueado', usuarioEncontrado.username);
-            
-            // Redirigir a la página principal
-            window.location.href = 'index.html';
-        } else {
-            // Si no existe usuario con esas credenciales
-            mostrarError('❌ Usuario o contraseña incorrectos.');
-        }
+      const correo = inputCorreo ? inputCorreo.value.trim() : '';
+      const password = inputPassword ? inputPassword.value.trim() : '';
 
-        // ============================================
-        // 6. (OPCIONAL) INTEGRACIÓN CON BACKEND REAL
-        // ============================================
-        /*
-        // Si tienes un servidor Node.js corriendo:
-        fetch('http://localhost:3001/login', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                correo: username,
-                contraseña: password
-            })
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data.success) {
-                localStorage.setItem('usuarioLogueado', data.usuario.nombre_usuario);
-                window.location.href = 'index.html';
-            } else {
-                mostrarError('❌ ' + data.mensaje);
-            }
-        })
-        .catch(err => {
-            mostrarError('❌ Error de conexión con el servidor.');
-            console.error('Error:', err);
+      if (!correo || !password) {
+        alert('Por favor ingresa tu correo y contraseña.');
+        return;
+      }
+
+      try {
+        const respuesta = await fetch('http://localhost:3000/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ correo, password })
         });
-        */
+
+        const datos = await respuesta.json();
+
+        if (!respuesta.ok || !datos.exito) {
+          alert(datos.mensaje || 'Error al iniciar sesión.');
+          return;
+        }
+
+        alert(`¡Bienvenido/a ${datos.usuario.nombre} (${datos.usuario.rol})!`);
+
+        localStorage.setItem('usuarioActivo', JSON.stringify(datos.usuario));
+        localStorage.setItem('userName', datos.usuario.nombre);
+        localStorage.setItem('usuarioRol', datos.usuario.rol || 'Usuario');
+
+        window.location.href = 'principal.html';
+
+      } catch (error) {
+        console.error('Error en login:', error);
+        alert('No se pudo conectar con el servidor.');
+      }
     });
+  }
 
-    // ============================================
-    // 7. FUNCIÓN PARA MOSTRAR ERRORES
-    // ============================================
-    function mostrarError(mensaje) {
-        errorMessage.textContent = mensaje;
-        errorMessage.classList.add('show');
-    }
+  /* ==========================================
+     4. PROCESAR REGISTRO DE CUENTA
+     ========================================== */
+  if (formRegister) {
+    formRegister.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-    // ============================================
-    // 8. LIMPIAR ERROR AL ESCRIBIR
-    // ============================================
-    usernameInput.addEventListener('input', function() {
-        errorMessage.classList.remove('show');
+      const inputsTexto = formRegister.querySelectorAll('input[type="text"]');
+      const nombre = inputsTexto[0]?.value.trim() || '';
+      const apellido = inputsTexto[1]?.value.trim() || '';
+      const correo = formRegister.querySelector('input[type="email"]')?.value.trim() || '';
+      const selectCiudad = formRegister.querySelector('select');
+      const ciudad = selectCiudad ? selectCiudad.value : '';
+      const passwordInput = formRegister.querySelector('input[type="password"]');
+      const password = passwordInput ? passwordInput.value : '';
+
+      const checkboxes = formRegister.querySelectorAll('input[name="activity"]:checked');
+      const actividades = Array.from(checkboxes).map(cb => cb.value);
+
+      if (!nombre || !apellido || !correo || !ciudad || !password) {
+        alert('Por favor, completa todos los campos del formulario.');
+        return;
+      }
+
+      try {
+        const respuesta = await fetch('http://localhost:3000/api/registro', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            nombre,
+            apellido,
+            correo,
+            ciudad,
+            password,
+            actividades
+          })
+        });
+
+        const datos = await respuesta.json();
+
+        if (!respuesta.ok || !datos.exito) {
+          alert(datos.mensaje || 'Error al crear la cuenta.');
+          return;
+        }
+
+        alert('¡Cuenta creada con éxito!');
+
+        const usuarioSesion = {
+          nombre: nombre,
+          apellido: apellido,
+          correo: correo,
+          rol: 'Usuario'
+        };
+
+        localStorage.setItem('usuarioActivo', JSON.stringify(usuarioSesion));
+        localStorage.setItem('userName', nombre);
+        localStorage.setItem('usuarioRol', 'Usuario');
+
+        window.location.href = 'principal.html';
+
+      } catch (error) {
+        console.error('Error al registrar cuenta:', error);
+        alert('Error de conexión con el servidor al intentar registrarte.');
+      }
     });
-
-    passwordInput.addEventListener('input', function() {
-        errorMessage.classList.remove('show');
-    });
-
-    console.log('✅ CHECK - Login cargado correctamente');
+  }
 });

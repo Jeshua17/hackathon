@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>principal - CHECK</title>
+  <link rel="stylesheet" href="CSS/principal.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- BARRA -->
+  <header class="navbar">
+    <div class="logo">
+        <img src="img/icon_check.png" alt="Logo CHECK" class="logo-img">
+      <span class="logo-text">CHECK</span>
+    </div>
+    
+    <nav class="nav-links">
+      <a href="#inicio" class="active">INICIO</a>
+      <a href="#actividades">ACTIVIDADES</a>
+      <a href="#nosotros">NOSOTROS</a>
+      <a href="#galeria">GALERÍA</a>
+    </nav>
+
+    <div class="nav-actions">
+  <!-- Saludo del usuario con sesión activa (se llena automáticamente con JS) -->
+  <span id="user-name-display" class="user-greeting-text" style="display: none;"></span>
+
+  <div id="seccion-admin" style="display: none;">
+    <button class="btn btn-secondary" id="btn-panel-admin">
+      ADMINISTRACIÓN
+    </button>
+  </div>
+
+  <!-- Botón icono de perfil / login -->
+  <button class="icon-btn" id="open-login-btn" aria-label="Perfil">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+      <circle cx="12" cy="7" r="4"></circle>
+    </svg>
+  </button>
+
+  <!-- Botón principal de navegación / Registro -->
+  <a href="login.html" class="btn btn-primary" id="btn-login-nav">ÚNETE GRATIS</a>
+  
+  <!-- Botón opcional para cerrar sesión (se puede mostrar con CSS/JS cuando hay sesión activa) -->
+  <button class="btn btn-secondary" id="btn-logout" onclick="cerrarSesion()" style="display: none;">
+    CERRAR SESIÓN
+  </button>
+</div>
+  </header>
+
+  <!-- INICIO -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <div class="category-tag">
+        <span class="play-icon">►</span> ACTIVIDADES AL AIRE LIBRE · VERANO 2026
+      </div>
+
+      <h1 class="hero-title">
+        <span>MUÉVETE.</span>
+        <span class="highlight">CONECTA.</span>
+        <span>DISFRUTA.</span>
+      </h1>
+
+      <p class="hero-description">
+        Encuentra actividades deportivas y sociales al aire libre cerca de ti. 
+        Muchos jóvenes de tu localidad eligen cada semana <strong>el deporte y la comunidad</strong> 
+        como su respuesta al consumo de drogas, el alcohol y las malas influencias.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="activi_2.html" class="btn btn-primary btn-large">EXPLORAR ACTIVIDADES &rarr;</a>
+        <a href="#actividades" class="btn btn-outline btn-large">VER EVENTOS</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">1K+</span>
+          <span class="stat-label">JÓVENES ACTIVOS</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">5+</span>
+          <span class="stat-label">ACTIVIDADES/MES</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">4</span>
+          <span class="stat-label">LOCALIDADES</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1200&auto=format&fit=crop" alt="Jóvenes jugando baloncesto al aire libre" class="hero-image">
+
+      <div class="event-card">
+        <div class="event-info">
+          <h3>TORNEO 3X3 - CANCHA INACTEC </h3>
+          <p>Sábado 2 de agosto · 2:00 PM</p>
+        </div>
+        <a href="card_1.html" class="btn btn-primary">INSCRÍBETE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVIDADES -->
+  <section class="featured-activities" id="actividades">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          ACTIVIDADES <span class="highlight">DESTACADAS</span>
+        </h2>
+        <a href="activi_2.html" class="see-all-link">VER TODAS &rarr;</a>
+      </div>
+
+      <div class="activities-grid">
+        <article class="activity-card card-large">
+          <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1200&auto=format&fit=crop" alt="Torneo de Baloncesto 3x3" class="card-bg">
+          <div class="card-overlay">
+            <div class="card-badges">
+              <span class="badge badge-trending">TRENDING</span>
+            </div>
+            <div class="card-content">
+              <span class="category-pill">DEPORTE</span>
+              <h3 class="card-title">TORNEO DE BALONCESTO 3X3</h3>
+              <div class="card-meta">
+                <span> SÁB 2 AGO</span>
+                <span> CANCHA INATEC</span>
+              </div>
+              <div class="card-footer">
+                <span class="spots-count">✓ 12 cupos disponibles</span>
+                <a href="card_1.html" class="btn-outline btn-sm btn-details">VER MÁS</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="activity-card">
+          <img src="https://plus.unsplash.com/premium_photo-1684313874026-b26d35ae07e6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2ljbGlzbW8lMjB1cmJhbm98ZW58MHx8MHx8fDA%3D" alt="Ruta de Ciclismo" class="card-bg">
+          <div class="card-overlay">
+            <div class="card-content">
+              <span class="category-pill">CICLISMO</span>
+              <h3 class="card-title">RUTA SENCILLA</h3>
+              <div class="card-meta">
+                <span> DOM 3 AGO</span>
+                <span> Punto de encuentro: Parque Central</span>
+              </div>
+              <div class="card-footer">
+                <span class="spots-count">✓ 10 cupos disponibles</span>
+                <a href="card_2.html" class="btn-outline btn-sm btn-details">VER MÁS</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="activity-card">
+          <img src="https://images.unsplash.com/photo-1520045892732-304bc3ac5d8e?q=80&w=800&auto=format&fit=crop" alt="Skateboard Urbano" class="card-bg">
+          <div class="card-overlay">
+            <div class="card-badges">
+              <span class="badge badge-trending">TRENDING</span>
+            </div>
+            <div class="card-content">
+              <span class="category-pill">URBANO</span>
+              <h3 class="card-title">SKATEBOARD URBANO</h3>
+              <div class="card-meta">
+                <span> VIE 1 AGO</span>
+                <span> SKATEPARK - RIO CHIQUITO</span>
+              </div>
+              <div class="card-footer">
+                <span class="spots-count">✓ 5 cupos disponibles</span>
+                <a href="card_3.html" class="btn-outline btn-sm btn-details">VER MÁS</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section class="mission-section" id="nosotros">
+    <div class="container mission-grid">
+      <div class="mission-left">
+        <div class="category-tag">
+          <span class="play-icon">&#9654;</span> NUESTRA MISIÓN
+        </div>
+        <h2 class="mission-title">
+          EL DEPORTE<br>
+          <span class="highlight">SALVA VIDAS.</span><br>
+          LA TUYA IMPORTA.
+        </h2>
+        <p class="mission-text">
+          CHECK nació con un propósito claro: <strong>alejar a los jóvenes del consumo de drogas, del alcohol y de las malas influencias</strong> ofreciéndoles espacios seguros, actividades que generan adrenalina real y una comunidad que los respalda.
+        </p>
+        <p class="mission-text">
+          Cuando tienes un equipo, una ruta o un torneo esperándote, las calles ya no tienen el mismo atractivo. Aquí la única adicción que promovemos es al movimiento, al aire libre y a los buenos amigos.
+        </p>
+      </div>
+
+      <div class="mission-right">
+        <div class="mission-card">
+          <div class="mission-card-icon">☒</div>
+          <div class="mission-card-content">
+            <h3>CERO DROGAS, CERO ALCOHOL</h3>
+            <p>Todas nuestras actividades son espacios 100% libres de sustancias. Aquí la euforia viene del juego.</p>
+          </div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-card-icon">🛡</div>
+          <div class="mission-card-content">
+            <h3>FUERA DE LAS MALAS INFLUENCIAS</h3>
+            <p>Rodearte de personas que comparten tus valores cambia tu perspectiva. Encuentra tu círculo positivo.</p>
+          </div>
+        </div>
+
+        <div class="mission-card">
+          <div class="mission-card-icon">𖧧</div>
+          <div class="mission-card-content">
+            <h3>CONSTRUYE TU MEJOR VERSIÓN</h3>
+            <p>El deporte y la naturaleza forjan carácter, disciplina y autoestima — las herramientas que ninguna sustancia te da.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="gallery-section" id="galeria">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">LA <span class="highlight">COMUNIDAD</span> EN ACCIÓN</h2>
+        <a href="galeria.html" class="see-all-link">VER GALERÍA &rarr;</a>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item gallery-item-tall">
+          <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=800&auto=format&fit=crop" alt="Baloncesto en cancha">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop" alt="Jóvenes sentados">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=800&auto=format&fit=crop" alt="Skateboarding">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=800&auto=format&fit=crop" alt="Senderismo">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?q=80&w=800&auto=format&fit=crop" alt="Lanzamiento baloncesto">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNIRSE -->
+  <section class="cta-section">
+    <div class="container cta-grid">
+      <div class="cta-left">
+        <div class="category-tag">
+          <span class="play-icon">&#9654;</span> ÚNETE AHORA — ES GRATIS
+        </div>
+        <h2 class="cta-title">
+          ¿LISTO PARA<br>
+          <span class="highlight">LA ACCIÓN?</span>
+        </h2>
+        <p class="cta-text">
+          Regístrate gratis, elige tu actividad favorita y sal a conocer gente increíble. Porque la mejor forma de decirle <strong>NO a las drogas y al alcohol</strong> es tener algo más poderoso que los reemplace — y eso somos nosotros.
+        </p>
+
+        <div class="testimonial-card">
+          <span class="quote-icon">✉</span>
+          <div class="testimonial-content">
+            <p><em>"Desde que entré a CHECK dejé de perder el tiempo en malas compañías. El deporte me dio lo que buscaba."</em></p>
+            <span class="testimonial-author">— Sebastián, 19 años</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-right">
+        <ul class="benefits-list">
+          <li><span class="check-icon">✓</span> Acceso a más de 10 actividades al mes</li>
+          <li><span class="check-icon">✓</span> Notificaciones de eventos cerca de ti</li>
+          <li><span class="check-icon">✓</span> Red de jóvenes activos en tu localidad</li>
+          <li><span class="check-icon">✓</span> Crea y organiza tus propios grupos</li>
+        </ul>
+
+        <div class="cta-buttons">
+          <a href="login.html" action=register class="btn btn-primary btn-large">CREAR CUENTA GRATIS &rarr;</a>
+          <a href="activi_2.html" class="btn btn-outline btn-large">VER ACTIVIDADES</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <div class="footer-logo">
+        <span class="logo-icon"></span> CHECK
+      </div>
+      
+      <div class="footer-links">
+        <a href="privacidad.html">PRIVACIDAD</a>
+        <a href="terminos.html">TÉRMINOS</a>
+        <a href="contacto.html">CONTACTO</a>
+      </div>
+
+      <div class="footer-copy">
+        &copy; 2026 CHECK · Todos los derechos reservados
+      </div>
+    </div>
+  </footer>
+  <script src="js/principal.js"></script>
+</body>
+</html>

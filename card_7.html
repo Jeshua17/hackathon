@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalles de la Actividad - CHECK</title>
+  <link rel="stylesheet" href="css/card_1.css">
+</head>
+<body>
+
+  <!-- CONTENEDOR PRINCIPAL  -->
+  <div id="modal-overlay" class="modal-overlay">
+    <div id="modal-container" class="modal-container">
+      
+      <!-- ACTIVIDAD-->
+      <div class="modal-step-details">
+        <div class="modal-image-col">
+          <span class="badge-trending">
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"/>
+            </svg>
+            TRENDING
+          </span>
+          <img id="detail-img" src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=800&auto=format&fit=crop" alt="Torneo Mixto de Voleibol" class="card-bg">
+          <span id="detail-category" class="badge-category">VOLEIBOL</span>
+        </div>
+
+        <div class="modal-info-col">
+          <h2 id="detail-title" class="modal-title">TORNEO MIXTO DE VOLEIBOL</h2>
+
+          <ul class="details-list">
+            <li>
+              <svg class="icon-detail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              <div>
+                <span class="detail-label">FECHA</span>
+                <span id="detail-fecha" class="detail-val">DOM 9 AGO</span>
+              </div>
+            </li>
+
+            <li>
+              <svg class="icon-detail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <div>
+                <span class="detail-label">PUNTO DE ENCUENTRO</span>
+                <span id="detail-lugar" class="detail-val">PARQUE INFANTIL DE FUNDECI</span>
+              </div>
+            </li>
+
+            <li>
+              <svg class="icon-detail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+                <path d="M16 3.13a4 4 0 010 7.75"/>
+              </svg>
+              <div>
+                <span class="detail-label">CUPOS DISPONIBLES</span>
+                <span id="detail-cupos" class="detail-val">8 cupos</span>
+              </div>
+            </li>
+
+            <li>
+              <svg class="icon-detail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <div>
+                <span class="detail-label">HORA</span>
+                <span id="detail-duracion" class="detail-val">4PM</span>
+              </div>
+            </li>
+
+            <li>
+              <svg class="icon-detail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+              <div>
+                <span class="detail-label">NIVEL</span>
+                <span id="detail-nivel" class="detail-val">Todos los niveles</span>
+              </div>
+            </li>
+
+            <li>
+              <svg class="icon-detail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 11 12 14 22 4"/>
+                <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+              </svg>
+              <div>
+                <span class="detail-label">REQUISITOS</span>
+                <span id="detail-requisitos" class="detail-val">Ropa cómoda y ganas de socializar</span>
+              </div>
+            </li>
+          </ul>
+
+          <div class="mission-banner">
+            Esta actividad es parte de nuestra misión de mantener a los jóvenes activos, comprometidos con su comunidad y alejados de las malas influencias. <strong>¡Trae a un amigo!</strong>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn-primary-blue" onclick="expandToStep2()">
+              INSCRÍBETE &rarr;
+            </button>
+            <button type="button" class="btn-secondary-white" onclick="window.location.href='principal.html'">CERRAR</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- INSCRIPCIÓN -->
+      <div class="modal-step-form">
+        <div class="form-header-bar">
+          <div class="form-tag">&#9654; FORMULARIO DE INSCRIPCIÓN</div>
+          <button type="button" class="btn-close-icon" onclick="window.location.href='principal.html'">&times;</button>
+        </div>
+
+        <h2 id="form-title" class="modal-title">TORNEO MIXTO DE VOLEIBOL</h2>
+        
+        <div class="summary-box">
+          <div class="summary-left">
+            <span id="form-category-badge" class="badge-category-sm">VOLEIBOL</span>
+            <div class="summary-meta">
+              <span>
+                <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                </svg>
+                <strong id="form-summary-fecha">DOM 9 AGO</strong>
+              </span>
+              <span>
+                <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span id="form-summary-lugar">PARQUE INFANTIL DE FUNDECI</span>
+              </span>
+            </div>
+          </div>
+          <div id="form-summary-cupos" class="summary-right">8 cupos</div>
+        </div>
+
+        <form onsubmit="handleFormSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>NOMBRE</label>
+              <input type="text" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+              <label>APELLIDO</label>
+              <input type="text" placeholder="Tu apellido" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>CORREO ELECTRÓNICO</label>
+            <input type="email" placeholder="tu@correo.com" required>
+          </div>
+
+          <div class="form-group">
+            <label>TELÉFONO (WHATSAPP)</label>
+            <input type="tel" placeholder="+505 0000 0000" required>
+          </div>
+
+          <div class="form-group">
+            <label>EDAD</label>
+            <select id="user-age" required>
+              <option value="" disabled selected>Selecciona tu rango de edad</option>
+              <option value="13-15">13–15 años</option>
+              <option value="16-18">16–18 años</option>
+              <option value="19-22">19–22 años</option>
+            </select>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="terms" required>
+            <label for="terms">Acepto los <a href="terminos.html">términos de uso</a> y confirmo que asistiré a esta actividad.</label>
+          </div>
+
+          <button type="submit" class="btn-submit-full">CONFIRMAR INSCRIPCIÓN &rarr;</button>
+        </form>
+      </div>
+
+      <!-- CONFIRMACIÓN -->
+      <div class="modal-step-success" id="modal-step-success">
+        <div class="success-img-container">
+          <img src="img/icon_check.png" alt="Confirmación" class="success-custom-img">
+        </div>
+
+        <h2 class="success-title">¡INSCRIPCIÓN <span>CONFIRMADA!</span></h2>
+  
+        <p class="success-desc">
+          Te hemos enviado la confirmación a tu correo.<br>
+          Nos vemos el <strong id="success-fecha">DOM 9 AGO</strong> en <strong id="success-lugar">PARQUE INFANTIL DE FUNDECI</strong>
+        </p>
+
+        <div class="success-info-banner">
+          Recuerda llegar 10 minutos antes, traer agua y venir con energía. 
+          <strong>El deporte es tu mejor decisión.</strong>
+        </div>
+
+        <button type="button" class="btn-black-success" onclick="goToHome()">
+          VOLVER AL INICIO
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/card_7.js"></script>
+</body>
+</html>

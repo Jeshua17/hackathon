@@ -1,0 +1,143 @@
+:root {
+  --bg-black: #0e0e0e;
+  --bg-card: #282828;
+  --blue-primary: #293782;
+  --blue-hover: #4a6fa5;
+  --text-white: #FBFBFB;
+  --text-gray: #a0a0a0;
+  --border-color: #2a2a2a;
+  --accent-yellow: #ffd700;
+  --danger-red: #ff4d4d;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-black);
+  color: var(--text-white);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: var(--bg-black);
+  border-bottom: 2px solid var(--blue-primary);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 35px;
+  width: auto;
+}
+
+.logo-text {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--blue-primary);
+}
+
+.admin-badge {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: bold;
+  color: var(--accent-yellow);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--blue-primary);
+  color: var(--text-white);
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--blue-hover);
+  border-color: var(--blue-hover);
+  color: var(--text-white);
+}
+
+.admin-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.panel-header h1 {
+  color: var(--text-white);
+  margin-bottom: 5px;
+}
+
+.panel-header p {
+  color: var(--text-gray);
+  margin-top: 0;
+}
+
+.table-card {
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  margin-top: 20px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-table th {
+  background-color: var(--blue-primary);
+  color: var(--text-white);
+  padding: 12px;
+  font-size: 0.95rem;
+}
+
+.admin-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  color: var(--text-white);
+}
+
+.admin-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.loading-cell {
+  text-align: center;
+  color: var(--text-gray);
+  padding: 20px !important;
+}
+
+.btn-delete {
+  background-color: var(--danger-red);
+  color: var(--text-white);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.btn-delete:hover {
+  background-color: #cc0000;
+}
